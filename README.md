@@ -20,9 +20,9 @@ Based on [Ray Wenderlich Swift Style Guide](https://github.com/raywenderlich/swi
 - `guard`, `set`, `get` body on newline
 
 ```swift
-	guard let token = token else {
-		return
-	}
+guard let token = token else {
+    return
+}
 ```
 - Setting properties with lazy closures:
 
@@ -36,25 +36,25 @@ private lazy var tableView: UITableView = {
 - Accessors order - `get set`
 
 ```swift
-	var name: String {
-        get {
-            return "unknown"
-        }
-        set {
-        	name = newValue
-        }
+var name: String {
+    get {
+        return "unknown"
     }
+    set {
+        name = newValue
+    }
+}
 ```
 - Deinit above init
 
 ```swift
-	init() {
-		//	initialization logic
-	}
+init() {
+    // initialization logic
+}
 	
-	deinit() {
-		//	deinitialization logic
-	}
+deinit() {
+    // deinitialization logic
+}
 ```
 - Names of actions in view controllers: `...buttonPressed`
 
@@ -75,9 +75,9 @@ func loginEventTriggered() {
  
 ```swift
 enum Colors {
-	case red
-	case green
-	case blue
+    case red
+    case green
+    case blue
 }
 ```
 
