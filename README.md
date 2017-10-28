@@ -1,4 +1,7 @@
-# Rosberry Swift Code Style
+<p align="center">
+	<img src=".github/swift-style-guide-logo.png" alt="Rosberry Swift Style Guide" />
+</p>
+Based on [Ray Wenderlich Swift Style Guide](https://github.com/raywenderlich/swift-style-guide) with changes and additions. Make sure to read [Swift API Design Guidelines](https://swift.org/documentation/api-design-guidelines/).
 ## Questions:
 
 - [Use Type Inferred Context](https://github.com/raywenderlich/swift-style-guide#use-type-inferred-context)? Kormakov
@@ -19,7 +22,7 @@
 		return
 	}
 ```
-- Lazy for subviews and `= {}()` init style
+- Setting properties with lazy closures:
 
 ```swift
 private lazy var tableView: UITableView = {
@@ -67,12 +70,18 @@ func loginEventTriggered() {
 ```
 - Closure naming?
 - Enum cases on newline
+ 
+```swift
+enum Colors {
+	case red
+	case green
+	case blue
+}
+```
 
 ## Links:
-- [Ray Wenderlich Swift Style Guide](https://github.com/raywenderlich/swift-style-guide)
 - [Github Swift Style Guide](https://github.com/github/swift-style-guide)
 - [Linkedin Swift Style Guide](https://github.com/linkedin/swift-style-guide)
-- [Swift API Design Guidelines](https://swift.org/documentation/api-design-guidelines/)
 
 ## About
 
@@ -84,4 +93,4 @@ Check out our [open source projects](https://github.com/rosberry), read [our blo
 
 ## License
 
-Rosberry Swift Code Style is available under the MIT license. See the LICENSE file for more info.
+Rosberry Swift Style Guide is available under the MIT license. See the LICENSE file for more info.
