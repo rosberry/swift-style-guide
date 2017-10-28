@@ -1,7 +1,9 @@
 <p align="center">
 	<img src=".github/swift-style-guide-logo.png" alt="Rosberry Swift Style Guide" />
 </p>
-Based on [Ray Wenderlich Swift Style Guide](https://github.com/raywenderlich/swift-style-guide) with changes and additions. Make sure to read [Swift API Design Guidelines](https://swift.org/documentation/api-design-guidelines/).
+
+Based on [Ray Wenderlich Swift Style Guide](https://github.com/raywenderlich/swift-style-guide) with changes and additions. Make sure to read [Swift API Design Guidelines](https://swift.org/documentation/api-design-guidelines).
+
 ## Questions:
 
 - [Use Type Inferred Context](https://github.com/raywenderlich/swift-style-guide#use-type-inferred-context)? Kormakov
