@@ -82,6 +82,7 @@ enum Colors {
 ```
 
 ## Links:
+- [Swiftlint configuration file](https://github.com/rosberry/Foundation/blob/master/.swiftlint.yml) 
 - [Github Swift Style Guide](https://github.com/github/swift-style-guide)
 - [Linkedin Swift Style Guide](https://github.com/linkedin/swift-style-guide)
 
