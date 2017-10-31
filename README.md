@@ -45,7 +45,7 @@ var name: String {
     }
 }
 ```
-- Deinit above init
+- Deinit below init
 
 ```swift
 init() {
