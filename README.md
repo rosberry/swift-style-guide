@@ -6,7 +6,7 @@ Based on [Ray Wenderlich Swift Style Guide](https://github.com/raywenderlich/swi
 
 ## Questions:
 
-- [Use Type Inferred Context](https://github.com/raywenderlich/swift-style-guide#use-type-inferred-context)? Kormakov
+- [Use Type Inferred Context](https://github.com/raywenderlich/swift-style-guide#use-type-inferred-context)? В блоках как хотим, в проперти явно указываем тип, для цвета как хотим, в остальных случаях опускаем
 - [Spacing](https://github.com/raywenderlich/swift-style-guide#spacing) - 4?
 - Elses on newline
 - [Closure  anonymous arguments](https://github.com/raywenderlich/swift-style-guide#closure-expressions)
