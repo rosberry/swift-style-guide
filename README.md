@@ -7,14 +7,13 @@ Based on [Ray Wenderlich Swift Style Guide](https://github.com/raywenderlich/swi
 ## Questions:
 
 - [Use Type Inferred Context](https://github.com/raywenderlich/swift-style-guide#use-type-inferred-context)? В блоках как хотим, в проперти явно указываем тип, для цвета как хотим, в остальных случаях опускаем
-- [Spacing](https://github.com/raywenderlich/swift-style-guide#spacing) - 4?
-- Elses on newline
-- [Closure  anonymous arguments](https://github.com/raywenderlich/swift-style-guide#closure-expressions)
-- [Type Inference](https://github.com/raywenderlich/swift-style-guide#type-inference)? Kormakov
-- [Type Annotation for Empty Arrays and Dictionaries](https://github.com/raywenderlich/swift-style-guide#type-annotation-for-empty-arrays-and-dictionaries) pay attension
-- [Extending object lifetime](https://github.com/raywenderlich/swift-style-guide#extending-object-lifetime) think about it
+- [Spacing](https://github.com/raywenderlich/swift-style-guide#spacing) - 4
+- Elses on newline, except guard
+- [Closure  anonymous arguments](https://github.com/raywenderlich/swift-style-guide#closure-expressions) - never
+- [Extending object lifetime](https://github.com/raywenderlich/swift-style-guide#extending-object-lifetime) optional
 - [Access Control](https://github.com/raywenderlich/swift-style-guide#access-control)  explicitly use `open`, `public`, and `internal`
-- [Failing Guards](https://github.com/raywenderlich/swift-style-guide#failing-guards)
+- [Failing Guards](https://github.com/raywenderlich/swift-style-guide#failing-guards) - on newline
+- 
 
 ## Our rules:
 - `guard`, `set`, `get` body on newline
@@ -56,7 +55,7 @@ deinit() {
     // deinitialization logic
 }
 ```
-- Names of actions in view controllers: `...buttonPressed`
+- Names of actions in view controllers: `...buttonPressed`, `...viewTapped`
 
 ```swift
 @objc private func nameButtonPressed() {
@@ -70,7 +69,7 @@ func loginEventTriggered() {
     // event logic
 }
 ```
-- Closure naming?
+- Closure naming - success/failure, completion, handler in other cases
 - Enum cases on newline
  
 ```swift
@@ -80,6 +79,7 @@ enum Colors {
     case blue
 }
 ```
+- Nested types and type aliases should be at the top of classes.
 
 ## Links:
 - [Swiftlint configuration file](https://github.com/rosberry/Foundation/blob/master/.swiftlint.yml) 
