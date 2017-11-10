@@ -199,7 +199,7 @@ func didTriggerLoginEvent() {
 
 ### Closure Naming
 
-Use `success` and `failure` names for closures in functions contains two closures for success and failure cases. Use `completion` closure name for once called closure. Use `handler` closure ame in other cases.
+Use `success` and `failure` names for closures in functions contains two closures for success and failure cases. Use `completion` closure name for once called closure. Use `handler` closure name in other cases.
 
 **Preferred:**
 ```swift
@@ -293,14 +293,14 @@ For UIKit view controllers, consider grouping lifecycle, custom accessors, and I
 
 ### Unused Code
 
-Unused (dead) code, including Xcode template code and placeholder comments should be removed. An exception is when your tutorial or book instructs the user to use the commented code.
+Unused (dead) code, including Xcode template code and placeholder comments, should be removed. An exception is when your tutorial or book instructs the user to use the commented code.
 
 Aspirational methods not directly associated with the tutorial whose implementation simply calls the superclass should also be removed. This includes any empty/unused UIApplicationDelegate methods.
 
 **Preferred:**
 ```swift
 override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-  return Database.contacts.count
+    return Database.contacts.count
 }
 ```
 
@@ -334,15 +334,15 @@ Keep imports minimal. For example, don't import `UIKit` when importing `Foundati
 ![Xcode indent settings](.github/indentation.png)
 
 * Method braces and other braces (`if`/`else`/`switch`/`while` etc.) always open on the same line as the statement but close on a new line.
-* Tip: You can re-indent by selecting some code (or ⌘A to select all) and then Control-I (or Editor\Structure\Re-Indent in the menu). Some of the Xcode template code will have 4-space tabs hard coded, so this is a good way to fix that.
+* Tip: You can re-indent by selecting some code (or ⌘A to select all) and then Control-I (or Editor\Structure\Re-Indent in the menu). Some of the Xcode template code will have 4-space tabs hardcoded, so this is a good way to fix that.
 
 **Preferred:**
 ```swift
 if user.isHappy {
-  // Do something
+    // Do something
 } 
 else {
-  // Do something else
+    // Do something else
 }
 ```
 
@@ -350,10 +350,10 @@ else {
 ```swift
 if user.isHappy
 {
-  // Do something
+    // Do something
 }
 else {
-  // Do something else
+    // Do something else
 }
 ```
 
@@ -410,7 +410,7 @@ Avoid block comments inline with code, as the code should be as self-documenting
 
 ### Which one to use?
 
-Remember, structs have [value semantics](https://developer.apple.com/library/mac/documentation/Swift/Conceptual/Swift_Programming_Language/ClassesAndStructures.html#//apple_ref/doc/uid/TP40014097-CH13-XID_144). Use structs for things that do not have an identity. An array that contains [a, b, c] is really the same as another array that contains [a, b, c] and they are completely interchangeable. It doesn't matter whether you use the first array or the second, because they represent the exact same thing. That's why arrays are structs.
+Remember, structs have [value semantics](https://developer.apple.com/library/mac/documentation/Swift/Conceptual/Swift_Programming_Language/ClassesAndStructures.html#//apple_ref/doc/uid/TP40014097-CH13-XID_144). Use structs for things that do not have an identity. An array that contains [a, b, c] is really the same as another array that contains [a, b, c] and they are completely interchangeable. It doesn't matter whether you use the first array or the second because they represent the exact same thing. That's why arrays are structs.
 
 Classes have [reference semantics](https://developer.apple.com/library/mac/documentation/Swift/Conceptual/Swift_Programming_Language/ClassesAndStructures.html#//apple_ref/doc/uid/TP40014097-CH13-XID_145). Use classes for things that do have an identity or a specific life cycle. You would model a person as a class because two person objects are two different things. Just because two people have the same name and birthdate, doesn't mean they are the same person. But the person's birthdate would be a struct because a date of 3 March 1950 is the same as any other date object for 3 March 1950. The date itself doesn't have an identity.
 
@@ -425,43 +425,43 @@ class Circle: Shape {
     var x: Int, y: Int
     var radius: Double
     var diameter: Double {
-      get {
-        return radius * 2
-      }
-      set {
-        radius = newValue / 2
-      }
+        get {
+            return radius * 2
+        }
+        set {
+            radius = newValue / 2
+        }
     }
 
     init(x: Int, y: Int, radius: Double) {
-      self.x = x
-      self.y = y
-      self.radius = radius
+        self.x = x
+        self.y = y
+        self.radius = radius
     }
 
     convenience init(x: Int, y: Int, diameter: Double) {
-      self.init(x: x, y: y, radius: diameter / 2)
+        self.init(x: x, y: y, radius: diameter / 2)
     }
 
     override func area() -> Double {
-      return Double.pi * radius * radius
+        return Double.pi * radius * radius
     }
 }
 
 extension Circle: CustomStringConvertible {
     var description: String {
-      return "center = \(centerString) area = \(area())"
+        return "center = \(centerString) area = \(area())"
     }
     private var centerString: String {
-      return "(\(x),\(y))"
+        return "(\(x),\(y))"
     }
 }
 ```
 
 The example above demonstrates the following style guidelines:
 
- + Specify types for properties, variables, constants, argument declarations and other statements with a space after the colon but not before, e.g. `x: Int`, and `Circle: Shape`.
- + Define multiple variables and structures on a single line if they share a common purpose / context.
+ + Specify types for properties, variables, constants, argument declarations and other statements with space after the colon but not before, e.g. `x: Int`, and `Circle: Shape`.
+ + Define multiple variables and structures on a single line if they share a common purpose/context.
  + Indent getter and setter definitions and property observers.
  + Don't add modifiers such as `internal` when they're already the default. Similarly, don't repeat the access modifier when overriding a method.
  + Organize extra functionality (e.g. printing) in extensions.
@@ -489,7 +489,7 @@ var diameter: Double {
 ```swift
 var diameter: Double {
     get {
-      return radius * 2
+        return radius * 2
     }
 }
 ```
@@ -503,7 +503,7 @@ Marking classes or members as `final` in tutorials can distract from the main to
 final class Box<T> {
     let value: T
     init(_ value: T) {
-      self.value = value
+        self.value = value
     }
 }
 ```
@@ -569,7 +569,7 @@ attendeeList.sort { a, b in
 }
 ```
 
-Chained methods using trailing closures should be clear and easy to read in context. Decisions on spacing and line breaks is left to the discretion of the author, but don't use anonymous arguments. Examples:
+Chained methods using trailing closures should be clear and easy to read in context. Decisions on spacing and line breaks are left to the discretion of the author, but don't use anonymous arguments. Examples:
 
 ```swift
 let value = numbers
@@ -676,7 +676,7 @@ var volume: Double?
 
 if let unwrappedSubview = optionalSubview {
     if let realVolume = volume {
-      // do something with unwrappedSubview and realVolume
+        // do something with unwrappedSubview and realVolume
     }
 }
 ```
@@ -706,7 +706,7 @@ private lazy var tableView: UITableView = {
 
 **Notes:**
   - `[unowned self]` is not required here. A retain cycle is not created.
-  - Location manager has a side-effect for popping up UI to ask the user for permission so fine grain control makes sense here.
+  - Location manager has a side-effect of popping up UI to ask the user for permission so fine grain control makes sense here.
 
 
 ### Type Inference
@@ -868,10 +868,10 @@ When coding with conditionals, the left-hand margin of the code should be the "g
 func computeFFT(context: Context?, inputData: InputData?) throws -> Frequencies {
 
     guard let context = context else {
-      throw FFTError.noContext
+        throw FFTError.noContext
     }
     guard let inputData = inputData else {
-      throw FFTError.noInputData
+        throw FFTError.noInputData
     }
 
     // use context and input to compute the frequencies
