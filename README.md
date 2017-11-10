@@ -91,7 +91,7 @@ When referring to methods in prose, being unambiguous is critical. To refer to a
 1. Write the method name with no parameters.  **Example:** Next, you need to call the method `addTarget`.
 2. Write the method name with argument labels.  **Example:** Next, you need to call the method `addTarget(_:action:)`.
 3. Write the full method name with argument labels and types. **Example:** Next, you need to call the method `addTarget(_: Any?, action: Selector?)`.
-4. 
+
 For the above example using `UIGestureRecognizer`, 1 is unambiguous and preferred.
 
 **Pro Tip:** You can use Xcode's jump bar to lookup methods with argument labels.
@@ -199,7 +199,7 @@ func didTriggerLoginEvent() {
 
 ### Closure Naming
 
-Use `success` and `failure` names for function contains two closures for success and failure cases. Use `completion` name for once called closure. Use `handler` name in other cases.
+Use `success` and `failure` names for closures in functions contains two closures for success and failure cases. Use `completion` closure name for once called closure. Use `handler` closure ame in other cases.
 
 **Preferred:**
 ```swift
@@ -308,18 +308,18 @@ override func tableView(_ tableView: UITableView, numberOfRowsInSection section:
 
 ```swift
 override func didReceiveMemoryWarning() {
-  super.didReceiveMemoryWarning()
-  // Dispose of any resources that can be recreated.
+    super.didReceiveMemoryWarning()
+    // Dispose of any resources that can be recreated.
 }
 
 override func numberOfSections(in tableView: UITableView) -> Int {
-  // #warning Incomplete implementation, return the number of sections
-  return 1
+    // #warning Incomplete implementation, return the number of sections
+    return 1
 }
 
 override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-  // #warning Incomplete implementation, return the number of rows
-  return Database.contacts.count
+    // #warning Incomplete implementation, return the number of rows
+    return Database.contacts.count
 }
 
 ```
@@ -364,14 +364,14 @@ else {
 **Preferred:**
 ```swift
 class TestDatabase: Database {
-  var data: [String: CGFloat] = ["A": 1.2, "B": 3.2]
+    var data: [String: CGFloat] = ["A": 1.2, "B": 3.2]
 }
 ```
 
 **Not Preferred:**
 ```swift
 class TestDatabase : Database {
-  var data :[String:CGFloat] = ["A" : 1.2, "B":3.2]
+    var data :[String:CGFloat] = ["A" : 1.2, "B":3.2]
 }
 ```
 
@@ -392,7 +392,7 @@ enum Colors {
 }
 ```
 
-**NOt Preferred:**
+**Not Preferred:**
 ```swift
 enum Colors {
     case red, green, blue
@@ -853,9 +853,9 @@ while i < 3 {
 
 var i = 0
 while i < attendeeList.count {
-  let person = attendeeList[i]
-  print("\(person) is at position #\(i)")
-  i += 1
+    let person = attendeeList[i]
+    print("\(person) is at position #\(i)")
+    i += 1
 }
 ```
 
@@ -884,17 +884,17 @@ func computeFFT(context: Context?, inputData: InputData?) throws -> Frequencies 
 func computeFFT(context: Context?, inputData: InputData?) throws -> Frequencies {
 
     if let context = context {
-      if let inputData = inputData {
-        // use context and input to compute the frequencies
+        if let inputData = inputData {
+            // use context and input to compute the frequencies
 
-        return frequencies
-      } 
-      else {
-        throw FFTError.noInputData
-      }
+            return frequencies
+        } 
+        else {
+            throw FFTError.noInputData
+        }
     } 
     else {
-      throw FFTError.noContext
+        throw FFTError.noContext
     }
 }
 ```
@@ -913,15 +913,15 @@ guard let number1 = number1, let number2 = number2, let number3 = number3 else {
 ```swift
 if let number1 = number1 {
     if let number2 = number2 {
-      if let number3 = number3 {
-        // do something with numbers
-      } 
-      else {
-        fatalError("impossible")
-      }
+        if let number3 = number3 {
+            // do something with numbers
+        } 
+        else {
+            fatalError("impossible")
+        }
     } 
     else {
-      fatalError("impossible")
+        fatalError("impossible")
     }
 } 
 else {
