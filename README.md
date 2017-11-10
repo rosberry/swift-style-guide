@@ -8,22 +8,27 @@ Based on [Ray Wenderlich Swift Style Guide](https://github.com/raywenderlich/swi
 * [Correctness](#correctness)
 * [Naming](#naming)
   * [Prose](#prose)
+  * [Class Prefixes](#class-prefixes)
   * [Delegates](#delegates)
   * [Use Type Inferred Context](#use-type-inferred-context)
   * [Generics](#generics)
-  * [Class Prefixes](#class-prefixes)
+  * [Actions](#actions)
+  * [Closure naming](#closure-naming)
   * [Language](#language)
 * [Code Organization](#code-organization)
+  * [Lifecycle](#lifecycle)
   * [Protocol Conformance](#protocol-conformance)
   * [Unused Code](#unused-code)
   * [Minimal Imports](#minimal-imports)
 * [Spacing](#spacing)
+* [Newline](#newline)
 * [Comments](#comments)
 * [Classes and Structures](#classes-and-structures)
   * [Use of Self](#use-of-self)
   * [Protocol Conformance](#protocol-conformance)
   * [Computed Properties](#computed-properties)
   * [Final](#final)
+  * [Nested types](#nested-types)
 * [Function Declarations](#function-declarations)
 * [Closure Expressions](#closure-expressions)
 * [Types](#types)
@@ -35,7 +40,6 @@ Based on [Ray Wenderlich Swift Style Guide](https://github.com/raywenderlich/swi
   * [Syntactic Sugar](#syntactic-sugar)
 * [Functions vs Methods](#functions-vs-methods)
 * [Memory Management](#memory-management)
-  * [Extending Lifetime](#extending-lifetime)
 * [Access Control](#access-control)
 * [Control Flow](#control-flow)
 * [Golden Path](#golden-path)
@@ -495,17 +499,6 @@ func reticulateSplines(spline: [Double], adjustmentFactor: Double,
 }
 ```
 
-## Property declaration
-
-Subviews should be declared as lazy closures:
-
-```swift
-private lazy var tableView: UITableView = {
-    let tableView = UITableView()
-    return tableView
-}()
-```
-
 ## Closure Expressions
 
 Use trailing closure syntax only if there's a single closure expression parameter at the end of the argument list. Give the closure parameters descriptive names.
@@ -658,7 +651,7 @@ if let unwrappedSubview = optionalSubview {
 
 ### Lazy Initialization
 
-Consider using lazy initialization for finer grain control over object lifetime. This is especially true for `UIViewController` that loads views lazily. You can either use a closure that is immediately called `{ }()` or call a private factory method. Example:
+Consider using lazy initialization for finer grain control over object lifetime. This is especially true for `UIViewController` that loads views lazily. You can either use a closure that is immediately called `{ }()` or call a private factory method. Examples:
 
 ```swift
 lazy var locationManager: CLLocationManager = self.makeLocationManager()
@@ -670,6 +663,13 @@ private func makeLocationManager() -> CLLocationManager {
   manager.requestAlwaysAuthorization()
   return manager
 }
+```
+
+```swift
+private lazy var tableView: UITableView = {
+    let tableView = UITableView()
+    return tableView
+}()
 ```
 
 **Notes:**
