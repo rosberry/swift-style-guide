@@ -170,14 +170,14 @@ Names of actions in view controllers should describe action element and action.
 **Preferred:**
 ```swift
 @objc private func nameButtonPressed() {
-    // calling of view model events
+    // event logic
 }
 ```
 
 **Not Preferred:**
 ```swift
 @objc private func nameButtonAction() {
-    // calling of view model events
+    // event logic
 }
 ```
 
