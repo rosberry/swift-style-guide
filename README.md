@@ -496,7 +496,7 @@ var diameter: Double {
 
 ### Final
 
-Marking classes or members as `final` is necessary because it increase performance of the application. It is better to mark all classes or members as `final` initially and change it later if inheritance is needed.
+Marking classes or members as `final` is necessary because it increases performance of the application. It is better to mark all classes or members as `final` initially and change it later if inheritance is needed.
 
 ```swift
 // Turn any generic type into a reference type using this Box class.
