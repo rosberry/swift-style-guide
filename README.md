@@ -496,7 +496,7 @@ var diameter: Double {
 
 ### Final
 
-Marking classes or members as `final` in tutorials can distract from the main topic and is not required. Nevertheless, use of `final` can sometimes clarify your intent and is worth the cost. In the below example, `Box` has a particular purpose and customization in a derived class is not intended. Marking it `final` makes that clear.
+Marking classes or members as `final` is necessary because it increases performance of the application. It is better to mark all classes or members as `final` initially and change it later if inheritance is needed.
 
 ```swift
 // Turn any generic type into a reference type using this Box class.
