@@ -711,7 +711,7 @@ private lazy var tableView: UITableView = {
 
 ### Type Inference
 
-Prefer compact code and let the compiler infer the type for constants or variables of single instances if type is obvious in context of the declaration. Type inference is also appropriate for small (non-empty) arrays and dictionaries. When required, specify the specific type such as `CGFloat` or `Int16`.
+Prefer compact code and let the compiler infer the type for constants or variables of single instances. Optionally add the type if it is not obvious in context of the declaration. Type inference is also appropriate for small (non-empty) arrays and dictionaries. When required, specify the specific type such as `CGFloat` or `Int16`.
 
 **Preferred:**
 ```swift
@@ -719,7 +719,8 @@ let message = "Click the button"
 let currentBounds = computeViewBounds()
 var names = ["Mic", "Sam", "Christine"]
 let maximumWidth: CGFloat = 106.5
-let people: [Person] = fetchAttendeeList()
+let people = fetchAttendeeList()
+//or let people: [Person] = fetchAttendeeList()
 ```
 
 **Not Preferred:**
@@ -727,7 +728,6 @@ let people: [Person] = fetchAttendeeList()
 let message: String = "Click the button"
 let currentBounds: CGRect = computeViewBounds()
 let names = [String]()
-let people = fetchAttendeeList()
 ```
 
 #### Type Annotation for Empty Arrays and Dictionaries
