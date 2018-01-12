@@ -868,37 +868,29 @@ class TimeMachine {
 
 ## Control Flow
 
-Prefer the `for-in` style of `for` loop over the `while-condition-increment` style.
+Prefer higher order functions like `map`, `flatMap` and `forEach` over the `for-in` style and  the `while-condition-increment` style.
 
 **Preferred:**
 
 ```swift
-for _ in 0..<3 {
-    print("Hello three times")
+(0...3).forEach { number in
+    print(number)
 }
 
-for (index, person) in attendeeList.enumerated() {
-    print("\(person) is at position #\(index)")
-}
-
-for index in stride(from: 0, to: items.count, by: 2) {
-    print(index)
-}
-
-for index in (0...3).reversed() {
-    print(index)
-}
 ```
 
 **Not Preferred:**
 
 ```swift
+for number in 0...3 {
+    print(number)
+}
+
 var i = 0
 while i < 3 {
     print("Hello three times")
     i += 1
 }
-
 
 var i = 0
 while i < attendeeList.count {
@@ -907,6 +899,8 @@ while i < attendeeList.count {
     i += 1
 }
 ```
+
+**NOTE**: If it's needed to immediately end the execution of the loop, use the `for-in` style.
 
 ## Golden Path
 
