@@ -868,7 +868,7 @@ class TimeMachine {
 
 ## Control Flow
 
-Prefer higher order functions like `map`, `flatMap` and `forEach` over the `for-in` style and  the `while-condition-increment` style.
+Prefer higher order functions like `map`, `flatMap`, `forEach` and the `for-in` style over and the `while-condition-increment` style.
 
 **Preferred:**
 
@@ -900,7 +900,7 @@ while i < attendeeList.count {
 }
 ```
 
-**NOTE**: If it's needed to immediately end the execution of the loop, use the `for-in` style.
+**NOTE**: All higher order functions check **every** element in sequence. If it's needed to immediately interrupt execution of the loop, use the `for-in` style.
 
 ## Golden Path
 
