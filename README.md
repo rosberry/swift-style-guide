@@ -670,7 +670,7 @@ Static methods and type properties work similarly to global functions and global
 
 Declare variables and function return types as optional with `?` where a nil value is acceptable.
 
-Use implicitly unwrapped types declared with `!` only for instance variables that you know will be initialized later before use, such as subviews that will be set up in `viewDidLoad`.
+Use implicitly unwrapped types declared with `!` only for instance variables that you know will be initialized later before use.
 
 When accessing an optional value, use optional chaining if the value is only accessed once or if there are many optionals in the chain:
 
