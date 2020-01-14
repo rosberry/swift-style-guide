@@ -950,7 +950,7 @@ When multiple optionals are unwrapped either with `guard` or `if let`, minimize 
 
 ```swift
 guard let number1 = number1, let number2 = number2, let number3 = number3 else {
-    fatalError("impossible")
+    return
 }
 // do something with numbers
 ```
@@ -964,21 +964,19 @@ if let number1 = number1 {
             // do something with numbers
         } 
         else {
-            fatalError("impossible")
-        }
-    } 
+            return
     else {
-        fatalError("impossible")
+        return
     }
 } 
 else {
-    fatalError("impossible")
+    return
 }
 ```
 
 ### Failing Guards
 
-Guard statements are required to exit in some way. Statement such as `return`, `throw`, `break`, `continue`, and `fatalError()` should be on newline. Large code blocks should be avoided. If cleanup code is required for multiple exit points, consider using a `defer` block to avoid cleanup code duplication.
+Guard statements are required to exit in some way. Statement such as `return`, `throw`, `break` and `continue` should be on newline. Large code blocks should be avoided. If cleanup code is required for multiple exit points, consider using a `defer` block to avoid cleanup code duplication.
 
 ## Semicolons
 
