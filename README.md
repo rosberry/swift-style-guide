@@ -269,7 +269,7 @@ init() {
     // initialization logic
 }
 	
-deinit() {
+deinit {
     // deinitialization logic
 }
 ```
