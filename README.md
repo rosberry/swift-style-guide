@@ -46,6 +46,7 @@ Based on [Ray Wenderlich Swift Style Guide](https://github.com/raywenderlich/swi
   * [Failing Guards](#failing-guards)
 * [Semicolons](#semicolons)
 * [Parentheses](#parentheses)
+* [Fatal errors](#fatal-errors)
 * [About](#about)
 * [License](#license)
 
@@ -1025,6 +1026,29 @@ In larger expressions, optional parentheses can sometimes make code read more cl
 ```swift
 let playerMark = (player == current ? "X" : "O")
 ```
+
+## Fatal errors
+
+Avoid fatal errors if possible.
+
+**Preferred:**
+
+```swift
+guard views.count > 0 else {
+    fatalError("Views must contain at least one view")
+  	return
+}
+```
+
+**Not Preferred:**
+
+```swift
+guard views.count > 0 else {
+  	return
+}
+```
+
+
 
 ## About
 
