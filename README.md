@@ -1048,7 +1048,9 @@ guard views.count > 0 else {
 }
 ```
 
+## Swiftlint
 
+Use [this Swiftlint configuration](.swiftlint.yml) to detect common issues in projects.
 
 ## About
 
