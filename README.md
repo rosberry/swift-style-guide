@@ -1035,7 +1035,6 @@ Avoid fatal errors if possible.
 
 ```swift
 guard views.count > 0 else {
-    fatalError("Views must contain at least one view")
   	return
 }
 ```
@@ -1044,6 +1043,7 @@ guard views.count > 0 else {
 
 ```swift
 guard views.count > 0 else {
+    fatalError("Views must contain at least one view")
   	return
 }
 ```
