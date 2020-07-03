@@ -46,6 +46,7 @@ Based on [Ray Wenderlich Swift Style Guide](https://github.com/raywenderlich/swi
   * [Failing Guards](#failing-guards)
 * [Semicolons](#semicolons)
 * [Parentheses](#parentheses)
+* [Fatal errors](#fatal-errors)
 * [About](#about)
 * [License](#license)
 
@@ -269,7 +270,7 @@ init() {
     // initialization logic
 }
 	
-deinit() {
+deinit {
     // deinitialization logic
 }
 ```
@@ -950,7 +951,7 @@ When multiple optionals are unwrapped either with `guard` or `if let`, minimize 
 
 ```swift
 guard let number1 = number1, let number2 = number2, let number3 = number3 else {
-    fatalError("impossible")
+    return
 }
 // do something with numbers
 ```
@@ -964,21 +965,19 @@ if let number1 = number1 {
             // do something with numbers
         } 
         else {
-            fatalError("impossible")
-        }
-    } 
+            return
     else {
-        fatalError("impossible")
+        return
     }
 } 
 else {
-    fatalError("impossible")
+    return
 }
 ```
 
 ### Failing Guards
 
-Guard statements are required to exit in some way. Statement such as `return`, `throw`, `break`, `continue`, and `fatalError()` should be on newline. Large code blocks should be avoided. If cleanup code is required for multiple exit points, consider using a `defer` block to avoid cleanup code duplication.
+Guard statements are required to exit in some way. Statement such as `return`, `throw`, `break` and `continue` should be on newline. Large code blocks should be avoided. If cleanup code is required for multiple exit points, consider using a `defer` block to avoid cleanup code duplication.
 
 ## Semicolons
 
@@ -1027,6 +1026,31 @@ In larger expressions, optional parentheses can sometimes make code read more cl
 ```swift
 let playerMark = (player == current ? "X" : "O")
 ```
+
+## Fatal errors
+
+Avoid fatal errors if possible.
+
+**Preferred:**
+
+```swift
+guard views.count > 0 else {
+  	return
+}
+```
+
+**Not Preferred:**
+
+```swift
+guard views.count > 0 else {
+    fatalError("Views must contain at least one view")
+  	return
+}
+```
+
+## Swiftlint
+
+Use [this Swiftlint configuration](.swiftlint.yml) to detect common issues in projects.
 
 ## About
 
